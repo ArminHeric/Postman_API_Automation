@@ -1,0 +1,583 @@
+{
+	"info": {
+		"_postman_id": "06127e67-13c2-4398-ae20-78339f40ef0b",
+		"name": "atlantbh_API",
+		"description": "Skyscanner testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List places",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "846196fa-79c6-4279-b69e-7baecff2595c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Stockholm\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Stockholm\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"autosuggest",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GB",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Stockholm"
+						}
+					]
+				},
+				"description": "As a user I want to retrive places from API"
+			},
+			"response": []
+		},
+		{
+			"name": "Browse quotes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9cb05e38-d144-4097-a6ee-afce6cf198df",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"MinPrice\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"MinPrice\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2021-09-01",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browsequotes",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"SFO-sky",
+						"JFK-sky",
+						"2021-09-01"
+					]
+				},
+				"description": "Retrive the information about cheapest quote"
+			},
+			"response": []
+		},
+		{
+			"name": "Browse routes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "482350f2-1c79-4536-afdf-f397df28dfe5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"DestinationId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"DestinationId\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO-sky/ORD-sky/2021-09-01",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browseroutes",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"SFO-sky",
+						"ORD-sky",
+						"2021-09-01"
+					]
+				},
+				"description": "Retrive chepaest routes "
+			},
+			"response": []
+		},
+		{
+			"name": "Browse dates",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c356ad2b-fb43-4748-91db-a6ce562357aa",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Dates\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Dates\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/SFO-sky/LAX-sky/2021-09-01",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browsedates",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"SFO-sky",
+						"LAX-sky",
+						"2021-09-01"
+					]
+				},
+				"description": "Get information about dates of flights"
+			},
+			"response": []
+		},
+		{
+			"name": "Browse date inbounds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ced000b1-be75-4ff3-aa37-ca763a989b20",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Dates\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Dates\");\r",
+							"});\r",
+							"pm.test(\"InboundDates\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"InboundDates\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/MSP-sky/LGA-sky/2020-11-12/2020-12-19",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browsedates",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"MSP-sky",
+						"LGA-sky",
+						"2020-11-12",
+						"2020-12-19"
+					]
+				},
+				"description": "search inbound dates"
+			},
+			"response": []
+		},
+		{
+			"name": "Browse quotes inbounds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "da455845-4dbb-4068-800f-906c406a7ed5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Quotes\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Quotes\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com\"",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LGA-sky/MSP-sky/2020-11-23/2020-12-18",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browsequotes",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"LGA-sky",
+						"MSP-sky",
+						"2020-11-23",
+						"2020-12-18"
+					]
+				},
+				"description": "get information about cheapest inbound quotes"
+			},
+			"response": []
+		},
+		{
+			"name": "Browse routes inbound",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9f38020-2498-444d-bc41-2dc240bf0e73",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Routes\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Routes\");\r",
+							"\r",
+							"pm.test(\"MinPrice\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"MinPrice\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/JFK-sky/MSP-sky/2020-11-15/2020-12-25",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"browseroutes",
+						"v1.0",
+						"US",
+						"USD",
+						"en-US",
+						"JFK-sky",
+						"MSP-sky",
+						"2020-11-15",
+						"2020-12-25"
+					]
+				},
+				"description": "get information about inbound routes"
+			},
+			"response": []
+		},
+		{
+			"name": "List markets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8eb7508c-fda0-4cf8-a50c-4fb947c01b73",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Countries\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Countries\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"reference",
+						"v1.0",
+						"countries",
+						"en-US"
+					]
+				},
+				"description": "Get a list of countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Currencies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f0ade0a-ce43-4c8b-9460-aff6f125683a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Currencies\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Currencies\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-rapidapi-host",
+						"value": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-key",
+						"value": "a3993a2bc6mshcdfbd67a37fcac3p1ba14fjsn6fbb6d22b76d",
+						"type": "text"
+					},
+					{
+						"key": "useQueryString",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",
+					"protocol": "https",
+					"host": [
+						"skyscanner-skyscanner-flight-search-v1",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"apiservices",
+						"reference",
+						"v1.0",
+						"currencies"
+					]
+				},
+				"description": "Get list of currencies"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
